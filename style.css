@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-gray: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --very-dark-gray: hsl(0, 0%, 27%);
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  min-width: 375px;
+  overflow-x: hidden;
+}
+
+header {
+  height: 110px;
+  width: 100%;
+  /* background-color: var(--dark-gray); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* top: 110px; */
+}
+.header__wrapper {
+  width: 90%;
+}
+nav {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+}
+.logo {
+  justify-self: center;
+}
+
+.hamburger {
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  height: 15px;
+  justify-content: space-between;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.hamburger span {
+  background-color: white;
+  height: 2px;
+  width: 20px;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: 0.7px 2px;
+}
+.hamburger__open span {
+  height: 1.5px;
+  background-color: grey;
+}
+.hamburger__open span:first-of-type {
+  transform: rotate(45deg);
+}
+.hamburger__open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger__open span:last-of-type {
+  transform: rotate(-45deg);
+}
+
+.mobile__nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 110px;
+  padding: 0 5%;
+  position: absolute;
+  top: 0;
+  left: -1050px;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+.mobile__nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  text-transform: lowercase;
+  margin-left: 30px;
+}
+.mobile__nav-links--show {
+  left: 0;
+}
+.desktop__nav-links {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  /* left: 1024px; */
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+  transition: all 0.3s S;
+  display: none;
+}
+.overlay--show {
+  left: 0;
+  display: block;
+}
+
+.main {
+  width: 100%;
+}
+
+.carousel__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.carousel {
+  width: 100%;
+  /* display: flex; */
+  transition: all 0.3s ease-in-out;
+  animation: carousel 0.3s ease-in;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel picture {
+  width: 100%;
+}
+.carousel__image img {
+  min-width: 375px;
+  width: 100%;
+}
+.slide__indicators {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  top: -90px;
+
+  /* background-color: red; */
+}
+.indicator__circle {
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--dark-gray);
+  border-radius: 50%;
+}
+.indicator__circle--marked {
+  background-color: red;
+}
+.carousel__buttons {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -60px;
+  right: 1px;
+}
+.carousel__button {
+  height: 55px;
+  width: 55px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carousel__button:hover {
+  background-color: rgb(66, 66, 66);
+}
+.carousel__button::before {
+  content: "";
+  background-color: white;
+  height: 1px;
+  width: 15px;
+  transform: translateX(4px) translateY(-4px) rotate(45deg);
+}
+.carousel__button::after {
+  content: "";
+  background-color: white;
+  height: 1px;
+  width: 15px;
+  transform: translateX(4px) translateY(5px) rotate(-45deg);
+}
+.carousel__buttons .btn-left {
+  transform: translateX(2px) rotate(180deg);
+}
+
+/* ========= MEDIA QUERIES ========== */
+/* ========= MEDIA QUERIES ========== */
+/* ========= MEDIA QUERIES ========== */
+/* ========= MEDIA QUERIES ========= */
+@media (min-width: 1024px) {
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .hamburger {
+    display: none;
+  }
+  .mobile__nav-links {
+    display: none;
+  }
+  .desktop__nav-links {
+    display: block;
+    margin-left: 40px;
+  }
+  .desktop__nav-links a {
+    color: white;
+    text-transform: lowercase;
+    margin-left: 30px;
+    font-weight: 500;
+    font-size: 13px;
+  }
+}
