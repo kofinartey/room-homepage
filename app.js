@@ -19,22 +19,35 @@ hamburger.addEventListener("click", () => {
 /* =========SLIDER INTERACTIVITY===========*/
 let slides = document.querySelectorAll(".carousel__image");
 let totalSlides = slides.length;
+const indicatorContainer = document.querySelector(".slide__indicators");
 let currentIndex = 0;
+let discoverSlides = document.querySelectorAll(".discover__slide");
 
 //create slide indicator
 for (let i = 0; i < totalSlides; i++) {
   let indicatorCircle = document.createElement("span");
-  const indicators = document.querySelector(".slide__indicators");
-  indicators.append(indicatorCircle);
+  indicatorCircle.classList.add("indicator__circle");
+  indicatorContainer.append(indicatorCircle);
 }
 
 displaySlide();
+markIndicator();
 
 function displaySlide() {
   for (let i = 0; i < totalSlides; i++) {
     slides[i].style.display = "none";
+    discoverSlides[i].style.display = "none";
   }
   slides[currentIndex].style.display = "block";
+  discoverSlides[currentIndex].style.display = "block";
+}
+
+function markIndicator() {
+  let indicators = document.querySelectorAll(".indicator__circle");
+  for (let i = 0; i < indicators.length; i++) {
+    indicators[i].classList.remove("indicator__circle--marked");
+    indicators[currentIndex].classList.add("indicator__circle--marked");
+  }
 }
 
 //Add eventListeners for buttons
@@ -49,7 +62,7 @@ leftBtn.addEventListener("click", () => {
     currentIndex--;
   }
   displaySlide();
-  console.log(currentIndex);
+  markIndicator();
 });
 
 rightBtn.addEventListener("click", () => {
@@ -59,5 +72,5 @@ rightBtn.addEventListener("click", () => {
     currentIndex++;
   }
   displaySlide();
-  console.log(currentIndex);
+  markIndicator();
 });

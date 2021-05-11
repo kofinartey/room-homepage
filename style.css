@@ -15,6 +15,12 @@ a,
 a:visited {
   text-decoration: none;
 }
+p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3rem;
+  color: var(--dark-gray);
+}
 
 body {
   font-family: "Spartan", sans-serif;
@@ -147,9 +153,9 @@ nav {
   width: 100%;
 }
 .slide__indicators {
-  width: 120px;
+  /* width: 120px; */
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   position: relative;
   top: -90px;
@@ -157,13 +163,18 @@ nav {
   /* background-color: red; */
 }
 .indicator__circle {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   border: 2px solid var(--dark-gray);
   border-radius: 50%;
+  margin-right: 5px;
+  transition: all 0.3s ease-in-out;
 }
 .indicator__circle--marked {
-  background-color: red;
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  opacity: 0.3;
 }
 .carousel__buttons {
   display: flex;
@@ -200,6 +211,60 @@ nav {
 }
 .carousel__buttons .btn-left {
   transform: translateX(2px) rotate(180deg);
+}
+
+.discover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.discover__wrapper {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: ; */
+}
+.discover__heading {
+  font-weight: 600;
+  font-size: 25px;
+  margin: 20px 0;
+}
+.discover__text {
+  margin-bottom: 50px;
+}
+
+.discover__cta {
+  color: black;
+}
+.discover__cta a {
+  text-transform: uppercase;
+  color: black;
+  font-size: 14px;
+  letter-spacing: 0.5em;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about__image1,
+.about__image1 img,
+.about__image2,
+.about__image2 img {
+  width: 100%;
+}
+.about__content {
+  width: 85%;
+  margin: 60px 0;
+}
+.about__heading {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 /* ========= MEDIA QUERIES ========== */
