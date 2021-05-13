@@ -148,8 +148,16 @@ nav {
 .carousel {
   width: 100%;
   /* display: flex; */
-  transition: all 0.3s ease-in-out;
-  animation: carousel 0.3s ease-in;
+  transition: all 0.5s ease-in-out;
+  animation: carousel 0.5s ease-in;
+}
+@keyframes carousel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .carousel::-webkit-scrollbar {
@@ -215,6 +223,7 @@ nav {
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
+  transition: all 0.3s ease-in-out;
 }
 .discover__wrapper {
   width: 85%;
